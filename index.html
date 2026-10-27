@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres salir conmigo?</title>
+    <!-- Tailwind CSS (Framework para estilos rápidos) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tu archivo de estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Librería de Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-pink-50 min-h-screen overflow-x-hidden relative font-sans flex items-center justify-center p-4">
+
+    <!-- Contenedor general que organiza la caja de texto a la izquierda y la tarjeta principal a la derecha -->
+    <div class="relative z-10 flex flex-col md:flex-row items-center justify-center gap-6 max-w-5xl w-full my-auto">
+
+        <!-- Caja de texto izquierda -->
+        <div class="glass-card bg-white/80 backdrop-blur-md p-6 rounded-3xl shadow-xl w-full md:w-80 border border-pink-100 text-gray-700">
+            <h2 class="text-base font-medium text-gray-800 leading-relaxed">
+             quiero esta bien contigo y no quiero causarte mas problemas, solo creo que una de las cosas que mínimo te debo es celebrar tu cumpleaños, quiero darte algo, espero puedas.:)     
+            </h2>
+        </div>
+
+        <!-- Columna derecha (Tarjeta Principal + Reproductor) -->
+        <div class="flex flex-col items-center justify-center w-full max-w-md gap-4">
+
+            <!-- Tarjeta Principal -->
+            <div class="glass-card bg-white/80 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-xl text-center w-full border border-pink-100">
+                <!-- Imagen / GIF -->
+                <div class="mb-6 flex justify-center">
+                    <img id="main-img" src="yul.jpg" alt="Gatito tierno" class="w-36 h-36 object-cover rounded-2xl shadow-md transition-all duration-300">
+                </div>
+
+                <!-- Título -->
+                <h1 id="question-title" class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                    ¿Nos podemos ver el jueves? 
+                </h1>
+                <p class="text-gray-600 mb-8 text-sm md:text-base">
+                    Deseo que puedas y quieras hablar conmigo, ya estoy harto de fingir que no me cuesta no poder hablar contigo:(
+                </p>
+
+                <!-- Botones -->
+                <div id="buttons-container" class="flex flex-col sm:flex-row items-center justify-center gap-4 relative h-20">
+                    <button id="yes-btn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform cursor-pointer z-20">
+                        Pues ya q  
+                    </button>
+                    <button id="no-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-8 rounded-full shadow transition-all duration-150 absolute right-4 sm:relative sm:right-auto cursor-pointer">
+                        No 
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reproductor de SoundCloud -->
+            <div class="w-full rounded-2xl overflow-hidden shadow-md bg-white/50 backdrop-blur-sm p-2 border border-pink-100">
+                <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A997243579&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal de Opciones de Cita -->
+    <div id="date-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl text-center transform scale-95 transition-transform duration-300">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Muy bien, quiero decirte que puedes decirme que no, solo es un poquitin de humor</h3>
+            <p class="text-gray-600 text-sm mb-6">Selecciona la hora que puedas, yo tengo un examen el jueves a la 1:00pm pero despues o antes mega puedo:</p>
+            
+            <div class="space-y-3 mb-6">
+                <button class="date-option w-full py-3 px-4 bg-pink-50 hover:bg-pink-100 text-pink-700 font-medium rounded-xl border border-pink-200 transition-all text-left flex items-center gap-3 cursor-pointer" data-plan="despues de la escuela">
+                    <span></span> despues de la escuela
+                </button>
+                <button class="date-option w-full py-3 px-4 bg-pink-50 hover:bg-pink-100 text-pink-700 font-medium rounded-xl border border-pink-200 transition-all text-left flex items-center gap-3 cursor-pointer" data-plan="a las 11, fuera de tu school">
+                    <span></span> a las 11, fuera de tu school
+                </button>
+                <button class="date-option w-full py-3 px-4 bg-pink-50 hover:bg-pink-100 text-pink-700 font-medium rounded-xl border border-pink-200 transition-all text-left flex items-center gap-3 cursor-pointer" data-plan="a la hora que tu escojas">
+                    <span></span> a la hora que tu escojas
+                </button>
+            </div>
+
+            <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-sm font-medium cursor-pointer">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- Enlace a tu archivo de JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* Animación para los corazones flotantes del fondo */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    color: #ffb6c1;
+    user-select: none;
+    pointer-events: none;
+    animation: float 6s linear infinite;
+}
+
+/* Sombra elegante para la tarjeta principal */
+.glass-card {
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+}
